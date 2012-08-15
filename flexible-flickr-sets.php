@@ -77,7 +77,7 @@ class FlexiFlickr
 		?>
 	
 		<div class="wrap">
-    	<div class="icon32" id="icon-ffs"><br></div>
+    	<div class="icon32" id="icon-options-general"><br></div>
 		<h2>FlexiFlickr Settings</h2>
         
 	        <div class="ffs_options">
@@ -261,7 +261,7 @@ class FlexiFlickr
 
 			$format		= 'php_serial';
 			$media		= 'photos';
-			$extras		= 'url_o';
+			$extras		= 'url_m,url_c,url_o';
 
 			$request	= new WP_Http;
 			$url		= 'http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key='.$api_key.'&photoset_id='.$setid.'&media='.$media.'&extras='.$extras.'&format='.$format;
@@ -299,7 +299,11 @@ class FlexiFlickr
 			$photos = $data['photoset']['photo'];
 
 			foreach ($photos as $photo) {
-				$image_url = $photo['url_o'];
+				if(!empty($photo['url_c'])) {
+					$image_url = $photo['url_c'];
+				} else {
+					$image_url = $photo['url_o'];
+				}
 
 				$flexiflickr .= '<li><img src="'.$image_url.'"></li>';
 			}

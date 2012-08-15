@@ -24,12 +24,14 @@ This section describes how to install the plugin and get it working.
 
 = How does this all work? =
 
-It does
+It uses the Flickr API
 
 
 == Screenshots ==
 
-1. Example
+1. Example of settings page
+2. Example of shortcode in post
+
 
 == Upgrade Notice ==
 
