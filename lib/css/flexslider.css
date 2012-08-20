@@ -50,7 +50,17 @@ html[xmlns] .slides {display: block;}
 .loading .flex-viewport {max-height: 300px;}
 .flexslider .slides {zoom: 1;}
 
-.carousel li {margin-right: 5px}
+.flexslider ul {
+	margin: 0;
+	list-style: none;	
+}
+
+.flexslider ul li{
+	margin: 0;
+	list-style: none;	
+}
+
+.carousel li {margin: 0; list-style: none;}
 
 
 /* Direction Nav */
